@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    ports:
+      - '8000:80'
+    volumes:
+      - .:/var/www/html
+
+  db:
+    image: mariadb
+    ports:
+      - 3307:3306
+    volumes:
+      - dbvol:/var/lib/mysql
+    environment:
+      MYSQL_USER: dbuser
+      MYSQL_PASSWORD: test
+      MYSQL_ROOT_PASSWORD: test
+      MYSQL_DATABASE: appdb
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+volumes:
+  dbvol: {}
+
+  :

@@ -15,3 +15,7 @@ docker run -p 8080:80 web
 ## Check containers status
 
 docker ps
+
+## Build multiple services (docker-compose)
+
+docker-compose up
